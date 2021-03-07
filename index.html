@@ -56,13 +56,14 @@
     <div class="content">
       <textarea name="content-in" id="" cols="30" rows="10"></textarea>
       <div class="colour"></div>
-      <a id="createLink">createFile</a>
+      <!--a id="createLink">createFile</a-->
+      <a id="link" target="_blank" download="file.txt">Download</a>
       <a href="https://t-h-p-d.github.io/62a46f12-a168-46f4-89f7-a955529e8a3b" class="dropbox-saver"></a>
     </div>
   </main>
 
   <script type="text/javascript">
-    document.getElementById('createLink').addEventListener('click', createMyFile)
+    /*document.getElementById('createLink').addEventListener('click', createMyFile)
 
     var file = new File(["foo"], "foo.txt", {
       type: "text/plain",
@@ -73,7 +74,22 @@
     function createMyFile() {
       console.log(file);
       console.log(fileurl);
+    }*/
+    var file;
+    var data = [];
+    data.push("This is a test\n");
+    data.push("Of creating a file\n");
+    data.push("In a browser\n");
+    var properties = { type: 'text/plain' }; // Specify the file's mime-type.
+    try {
+      // Specify the filename using the File constructor, but ...
+      file = new File(data, "file.txt", properties);
+    } catch (e) {
+      // ... fall back to the Blob constructor if that isn't supported.
+      file = new Blob(data, properties);
     }
+    var url = URL.createObjectURL(file);
+    document.getElementById('link').href = url;
   </script>
 
   <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs"
