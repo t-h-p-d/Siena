@@ -2,78 +2,18 @@
 <html>
 
 <head>
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
-      grid-template-areas: "titlebar""content";
-    }
-
-    .titlebar {
-      grid-area: titlebar;
-      border-top: 1px solid black;
-      padding: 8px;
-      font-family: 'Work Sans';
-      font-size: 14px;
-      /*text-align: center;*/
-      font-weight: 400;
-    }
-
-    .content {
-      padding: 4px;
-      grid-area: content;
-      font-family: monospace;
-      font-weight: bold;
-      box-sizing: border-box;
-      border-bottom: 1px solid black;
-    }
-
-    textarea[name=content-in] {
-      resize: vertical;
-      width: 100%;
-      box-sizing: border-box;
-      border: none;
-    }
-
-    textarea:focus[name=content-in] {
-      outline: none;
-    }
-  </style>
   <title>Write to me</title>
 </head>
 
 <body>
-  <main class="grid">
-    <div class="titlebar">Write to me . . .</div>
-    <div class="content">
-      <textarea name="content-in" id="" cols="30" rows="10"></textarea>
-      <div class="colour"></div>
-      <!--a id="createLink">createFile</a-->
+  <main>
+
       <a id="link" target="_blank" href="" class="dropbox-saver" data-filename="test.txt"></a>
-    </div>
+    
   </main>
 
   <script type="text/javascript">
-    /*document.getElementById('createLink').addEventListener('click', createMyFile)
 
-    var file = new File(["foo"], "foo.txt", {
-      type: "text/plain",
-    });
-
-    const fileurl = URL.createObjectURL(file)
-
-    function createMyFile() {
-      console.log(file);
-      console.log(fileurl);
-    }*/
     var file;
     var data = [];
     data.push("This is a test\n");
