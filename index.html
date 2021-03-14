@@ -50,33 +50,7 @@ folderselect: false, // or true
 // For the purposes of this option, folders have size zero.
 sizeLimit: 1024, // or any positive number
 };
-Handling the response
-The files parameter in the above success callback function will be an array of file objects, each containing info about the selected file. If multiselect is false, the array will contain a single item. Each file object includes the following fields:
 
-file = {
-// Unique ID for the file, compatible with Dropbox API v2.
-id: "id:...",
-
-// Name of the file.
-name: "filename.txt",
-
-// URL to access the file, which varies depending on the linkType specified when the
-// Chooser was triggered.
-link: "https://...",
-
-// Size of the file in bytes.
-bytes: 464,
-
-// URL to a 64x64px icon for the file based on the file's extension.
-icon: "https://...",
-
-// A thumbnail URL generated when the user selects images and videos.
-// If the user didn't select an image or video, no thumbnail will be included.
-thumbnailLink: "https://...?bounding_box=75&mode=fit",
-
-// Boolean, whether or not the file is actually a directory
-isDir: false,
-};
         var button = Dropbox.createChooseButton(options);
         document.getElementById("container").appendChild(button);
     </script>
