@@ -2,37 +2,23 @@
 <html>
 
 <head>
-  <title>Write to me</title>
+    <title>Write to me</title>
 </head>
 
 <body>
-  <main>
-    <a id="link" target="_blank" download="file.txt">Download</a>
-    
-    
-  </main>
+    <main>
 
-  <script type="text/javascript">
 
-    var file;
-    var data = [];
-    data.push("This is a test\n");
-    data.push("Of creating a file\n");
-    data.push("In a browser\n");
-    var properties = { type: 'text/plain' }; // Specify the file's mime-type.
-    try {
-      // Specify the filename using the File constructor, but ...
-      file = new File(data, "file.txt", properties);
-    } catch (e) {
-      // ... fall back to the Blob constructor if that isn't supported.
-      file = new Blob(data, properties);
-    }
-    var url = URL.createObjectURL(file);
-    document.getElementById('link').href = url;
-  </script>
+    </main>
+    <script type="text/javascript">
+        var button = Dropbox.createChooseButton(options);
+        document.getElementById("container").appendChild(button);
+    </script>
 
-  <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs"
-    data-app-key="y4peafiqodq9a7w"></script>
+
+
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs"
+        data-app-key="y4peafiqodq9a7w"></script>
 
 
 </body>
